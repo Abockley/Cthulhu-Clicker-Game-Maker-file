@@ -3,7 +3,7 @@
   <spriteName>spr_range</spriteName>
   <solid>0</solid>
   <visible>0</visible>
-  <depth>-3</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,9 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0;
-image_index = 2;
+            <string>/// Creates all range objects
 
+instance_create(x,y,obj_range1);
+instance_create(x,y,obj_range2);
+instance_create(x,y,obj_range3);
+instance_destroy();
 </string>
           </argument>
         </arguments>

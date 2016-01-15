@@ -24,7 +24,6 @@
     <font>fonts\fnt_score</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_controller</object>
     <object>objects\obj_person</object>
     <object>objects\obj_range</object>
     <object>objects\obj_range1</object>
@@ -35,7 +34,6 @@
     <object>objects\obj_button_setCultist</object>
     <object>objects\obj_button_back</object>
     <object>objects\obj_main</object>
-    <object>objects\obj_lightning</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_menu</room>

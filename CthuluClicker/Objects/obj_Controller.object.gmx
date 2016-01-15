@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,17 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Initializing values
+            <string>/// Set Variables
 
-//These values will change based on the room you're in
-    //If you're setting down Cultists
-    global.setCultist = 0;
-    
-//For Cultists
-    //Number of Cultists available
-    global.maxCultist = 2;
-    //Number of Cultists placed
-    global.numCultist = 0;
+time1 = 0;
+maxtime1 = 120;
+time2 = 0;
+maxtime2 = 9;
 
 //In game
 
@@ -74,78 +69,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Control
-global.touch = mouse_check_button_pressed(mb_left);
-
-//Misc variables
-global.numCultist = instance_number(obj_cultist);
-
-//Change setCultist to true if you're in rm_setCultist
-if (room = rm_setCultist)
-{
-    global.setCultist = 1;
-}
-else
-{
-    global.setCultist = 0;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///room = rm_setCultist
-if (global.setCultist = 1)
-{
-    if (global.touch &amp;&amp; global.numCultist&lt;global.maxCultist)
-    {
-        instance_create(mouse_x,mouse_y,obj_cultist);
-    }
-    
-}
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///room = rm_game
-if (room = rm_game)
-{
-    //General Mechanics
-    
-    //Game time
-    global.gameTime-=1; 
+            <string>global.gameTime-=1; 
     if (global.gameTime&lt;=0)
     {
         show_message("End of Game");
@@ -160,7 +84,17 @@ if (room = rm_game)
         instance_create(random_range(0,room_width),random_range(0,room_height),obj_person);
     }
 
+
+/*
+
+time+=1;
+if (time = maxtime)
+{
+instance_create(x,y,obj_lightning);
+time = 0;
 }
+
+
 </string>
           </argument>
         </arguments>
@@ -183,21 +117,7 @@ if (room = rm_game)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_font(fnt_score);
-
-if (room = rm_setCultist)
-{
-    if (global.numCultist &lt; global.maxCultist)
-    {
-        draw_sprite(spr_cultist,0,mouse_x,mouse_y);
-    }
-}
-
-if (room = rm_game)
-{
-    draw_text(room_width/2-10,0,global.Score);
-}
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>

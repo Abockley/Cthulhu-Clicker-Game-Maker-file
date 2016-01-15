@@ -3,7 +3,7 @@
   <spriteName>spr_range</spriteName>
   <solid>0</solid>
   <visible>0</visible>
-  <depth>0</depth>
+  <depth>-2</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,10 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(x,y,obj_range1);
-instance_create(x,y,obj_range2);
-instance_create(x,y,obj_range3);
-instance_destroy();
+            <string>/// Sets sprite index to second sprite, sets speed to 0
+
+image_speed = 0;
+image_index = 1;
 </string>
           </argument>
         </arguments>
