@@ -33,7 +33,7 @@ maxRange = 500;
 
 //Settings-- 1=Attack, 2=Herd, 3=Slow
 
-set = 2;
+set = 3;
 
 //Timer variables for attacks
 
@@ -142,6 +142,32 @@ if (set = 2) &amp;&amp; (room = rm_game)
     }
 }
 
+// Slowing Attack
+// Any person that is in range gets their speed knocked down by 2.
+// Range is half of max so that person speed can be reset to normal
+
+if (set = 3) &amp;&amp; (room = rm_game)
+{
+    if (instance_exists(obj_person) &amp;&amp; distance_to_object(obj_person)&lt;maxRange/2) //find the nearest person
+    {
+        closest = instance_nearest(x,y,obj_person);
+        with(closest)
+        {
+            speed = 2;
+        }
+    }
+    else if (instance_exists(obj_person) &amp;&amp; distance_to_object(obj_person) &gt; maxRange/2)
+    {
+        with (obj_person)
+        {
+            if (distance_to_object(obj_cultist) &gt; 500/2)
+            {
+                speed = 5;
+            }
+        }
+    }
+    
+}
 </string>
           </argument>
         </arguments>

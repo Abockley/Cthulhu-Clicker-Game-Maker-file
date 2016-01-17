@@ -53,7 +53,7 @@ if (y &gt;= room_height/2)
 }
 
 
-move_towards_point(540,790,random_range(4,7));
+move_towards_point(540,790,5);
 direction+=(random_range(-25,25));
 </string>
           </argument>
