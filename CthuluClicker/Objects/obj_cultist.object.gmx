@@ -33,7 +33,7 @@ maxRange = 500;
 
 //Settings-- 1=Attack, 2=Herd, 3=Slow
 
-set = 3;
+set = 2;
 
 //Timer variables for attacks
 
@@ -127,14 +127,18 @@ if (set = 1) &amp;&amp; (room = rm_game)
 
 if (set = 2) &amp;&amp; (room = rm_game)
 {
-    if (instance_exists(obj_person) &amp;&amp; distance_to_object(obj_person)&lt;maxRange &amp;&amp; herdCurrent != herdLimit) //find the nearest person
+    if ((instance_exists(obj_person)) &amp;&amp; (distance_to_object(obj_person)&lt;maxRange) &amp;&amp; (herdCurrent != herdLimit)) //find the nearest person
     {
         herdCurrent ++;
         closest = instance_nearest(x,y,obj_person);
+        selfx = x;
+        selfy = y;
     }
     with(closest)
     {
-        move_towards_point(obj_cultist.x, obj_cultist.y, 3);
+        selfx = instance_nearest(x,y,obj_cultist).x; //locks in on the closest Cultist
+        selfy = instance_nearest(x,y,obj_cultist).y;
+        move_towards_point(selfx, selfy, 3);
     }
     if !(instance_exists(closest))
     {
