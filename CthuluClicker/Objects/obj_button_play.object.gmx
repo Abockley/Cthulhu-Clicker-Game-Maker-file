@@ -70,6 +70,7 @@ else
 
 if (global.touch &amp;&amp; image_index = 1)
 {
+    global.setCultist=1;
     room_goto(rm_game);
 }
 </string>
@@ -97,7 +98,7 @@ if (global.touch &amp;&amp; image_index = 1)
             <string>/// Code to draw button and text
 
 draw_self();
-draw_text(x,y,'play');
+draw_text(x+10,y-32,'PLAY');
 </string>
           </argument>
         </arguments>

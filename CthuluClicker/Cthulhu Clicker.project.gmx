@@ -7,11 +7,10 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_person</sprite>
-    <sprite>sprites\spr_range</sprite>
     <sprite>sprites\spr_cultist</sprite>
     <sprite>sprites\spr_button</sprite>
     <sprite>sprites\spr_lightning</sprite>
-    <sprite>sprites\spr_menu</sprite>
+    <sprite>sprites\spr_text</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_ingame</background>
@@ -26,22 +25,15 @@
   </fonts>
   <objects name="objects">
     <object>objects\obj_person</object>
-    <object>objects\obj_range</object>
-    <object>objects\obj_range1</object>
-    <object>objects\obj_range2</object>
-    <object>objects\obj_range3</object>
     <object>objects\obj_cultist</object>
     <object>objects\obj_button_play</object>
     <object>objects\obj_button_setCultist</object>
     <object>objects\obj_button_back</object>
     <object>objects\obj_main</object>
-    <object>objects\obj_menu</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_menu</room>
     <room>rooms\rm_game</room>
-    <room>rooms\rm_setCultist</room>
-    <room>rooms\rm_test</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

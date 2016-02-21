@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -33,7 +33,7 @@ maxRange = 500;
 
 //Settings-- 1=Attack, 2=Herd, 3=Slow
 
-set = 2;
+set = global.cultistType;
 
 //Timer variables for attacks
 
@@ -46,6 +46,8 @@ maxtime2 = 9; //Time for lightning to happen
 herdLimit = 1;
 herdCurrent = 0;
 closest = 0;
+
+global.setCultist = 0;
 </string>
           </argument>
         </arguments>
@@ -71,7 +73,6 @@ closest = 0;
             <string>///Kill
 
 // Draws cultist in proper room
-// NOTE: This means that the cultists are currently persistent. Inefficient, make sure to fix when/if mechanics are changed
 
 if (room = rm_setCultist || room = rm_game)
 {
@@ -114,7 +115,9 @@ if (set = 1) &amp;&amp; (room = rm_game)
                 with(closestPerson)
                 {
                     instance_destroy();
-                    global.Score+=1;//Kill the nearest person, add 1 to your score
+                    global.Score += 1*global.comboLevel;
+                    global.comboMeter += 20/(global.comboLevel/2);
+                    //Kill the nearest person, add to your score
                 }
             }
         }
