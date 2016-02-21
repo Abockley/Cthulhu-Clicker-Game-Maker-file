@@ -74,10 +74,7 @@ global.setCultist = 0;
 
 // Draws cultist in proper room
 
-if (room = rm_setCultist || room = rm_game)
-{
-    draw_self();
-}
+draw_self();
 
 // Checks what setting the cultist is on and if they are in the game room
 
